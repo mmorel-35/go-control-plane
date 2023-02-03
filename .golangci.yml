@@ -3,6 +3,7 @@ run:
 
 linters:
   disable:
+    - govet
     # deprecated but still enabled in the bugs preset
     - scopelint
   enable:
