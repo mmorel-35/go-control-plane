@@ -10,8 +10,9 @@ dynamic_resources:
     resource_api_version: V3
     api_config_source:
       api_type: REST
-      transport_api_version: V3
-      refresh_delay: {nanos: 500000000} # 1/2s
+      transport_api_version: V3}
+      # 1/2s
+      refresh_delay: {nanos: 500000000}
       cluster_names:
       - xds_cluster
   lds_config:
@@ -19,7 +20,8 @@ dynamic_resources:
     api_config_source:
       api_type: REST
       transport_api_version: V3
-      refresh_delay: {nanos: 500000000} # 1/2s
+      # 1/2s
+      refresh_delay: {nanos: 500000000}
       cluster_names:
       - xds_cluster
 node:
@@ -58,7 +60,8 @@ layered_runtime:
           api_config_source:
             api_type: REST
             transport_api_version: V3
-            refresh_delay: {nanos: 500000000} # 1/2s
+            # 1/2s
+            refresh_delay: {nanos: 500000000}
             cluster_names:
             - xds_cluster
         name: runtime-0
