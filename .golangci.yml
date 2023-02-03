@@ -2,27 +2,31 @@ run:
   timeout: 10m
 
 linters:
-  presets:
-  - bugs
-
+  disable:
+  - scopelint # deprecated but still enabled in the bugs preset
   enable:
   - bodyclose
   - gofmt
   - goimports
+  - gomodguard
   - gosec
   - misspell
   - revive
   - unconvert
   - unparam
 
-  disable:
-  - scopelint # deprecated but still enabled in the bugs preset
-
 linters-settings:
   misspell:
     locale: US
   gofmt:
     simplify: true
+  gomodguard:
+    blocked:
+      modules:
+      - io/ioutil:
+          recommendations:
+            - io
+            - os
   unparam:
     check-exported: false
   goimports:
@@ -31,4 +35,3 @@ linters-settings:
     default-signifies-exhaustive: true
 
 issues:
-  fix: true
