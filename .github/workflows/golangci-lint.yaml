@@ -1,7 +1,7 @@
 name: golangci-lint
 
 on: [push, pull_request]
-  
+
 jobs:
   golangci:
     name: lint
@@ -15,6 +15,6 @@ jobs:
 
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
-        with:          
+        with:
           # Optional: golangci-lint command line arguments.
           args: --verbose
