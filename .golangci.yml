@@ -3,7 +3,7 @@ run:
 
 linters:
   disable:
-# deprecated but still enabled in the bugs preset
+    # deprecated but still enabled in the bugs preset
     - scopelint
   enable:
     - bodyclose
