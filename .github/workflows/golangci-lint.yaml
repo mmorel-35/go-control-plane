@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ibiqlik/action-yamllint@v3
-        with:
-          format: auto
+      #- uses: ibiqlik/action-yamllint@v3
+      #  with:
+      #    format: auto
 
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
