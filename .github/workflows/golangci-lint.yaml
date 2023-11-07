@@ -8,11 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v3
+      - uses: golangci/golangci-lint-action@v3
         with:
-          version: latest
-          only-new-issues: true
-          
           # Optional: golangci-lint command line arguments.
           args: --verbose
+          version: latest
+      - uses: golangci/golangci-lint-action@v3
+        with:
+          # Optional: golangci-lint command line arguments.
+          args: --verbose
+          version: latest
+          working-directory: examples/dyplomat
+      - uses: golangci/golangci-lint-action@v3
+        with:
+          # Optional: golangci-lint command line arguments.
+          args: --verbose
+          version: latest
+          working-directory: xdsmatcher
