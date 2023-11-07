@@ -17,11 +17,13 @@ jobs:
         with:
           # Optional: golangci-lint command line arguments.
           args: --verbose
+          skip-cache: true
           version: latest
           working-directory: examples/dyplomat
       - uses: golangci/golangci-lint-action@v3
         with:
           # Optional: golangci-lint command line arguments.
           args: --verbose
+          skip-cache: true
           version: latest
           working-directory: xdsmatcher
