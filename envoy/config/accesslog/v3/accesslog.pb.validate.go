@@ -18,7 +18,7 @@ import (
 
 	"google.golang.org/protobuf/types/known/anypb"
 
-	v3 "github.com/envoyproxy/go-control-plane/envoy/data/accesslog/v3"
+	accesslogv3 "github.com/envoyproxy/go-control-plane/envoy/data/accesslog/v3"
 )
 
 // ensure the imports are used
@@ -36,7 +36,7 @@ var (
 	_ = anypb.Any{}
 	_ = sort.Sort
 
-	_ = v3.AccessLogType(0)
+	_ = accesslogv3.AccessLogType(0)
 )
 
 // Validate checks the field values on AccessLog with the rules defined in the
@@ -2527,7 +2527,7 @@ func (m *LogTypeFilter) validate(all bool) error {
 	for idx, item := range m.GetTypes() {
 		_, _ = idx, item
 
-		if _, ok := v3.AccessLogType_name[int32(item)]; !ok {
+		if _, ok := accesslogv3.AccessLogType_name[int32(item)]; !ok {
 			err := LogTypeFilterValidationError{
 				field:  fmt.Sprintf("Types[%v]", idx),
 				reason: "value must be one of the defined enum values",

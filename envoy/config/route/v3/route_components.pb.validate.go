@@ -18,7 +18,7 @@ import (
 
 	"google.golang.org/protobuf/types/known/anypb"
 
-	v3 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
+	corev3 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
 )
 
 // ensure the imports are used
@@ -36,7 +36,7 @@ var (
 	_ = anypb.Any{}
 	_ = sort.Sort
 
-	_ = v3.RoutingPriority(0)
+	_ = corev3.RoutingPriority(0)
 )
 
 // Validate checks the field values on VirtualHost with the rules defined in
@@ -3125,7 +3125,7 @@ func (m *RouteAction) validate(all bool) error {
 
 	}
 
-	if _, ok := v3.RoutingPriority_name[int32(m.GetPriority())]; !ok {
+	if _, ok := corev3.RoutingPriority_name[int32(m.GetPriority())]; !ok {
 		err := RouteActionValidationError{
 			field:  "Priority",
 			reason: "value must be one of the defined enum values",

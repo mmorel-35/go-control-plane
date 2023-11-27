@@ -18,7 +18,7 @@ import (
 
 	"google.golang.org/protobuf/types/known/anypb"
 
-	v3 "github.com/envoyproxy/go-control-plane/envoy/extensions/filters/network/thrift_proxy/v3"
+	thrift_proxyv3 "github.com/envoyproxy/go-control-plane/envoy/extensions/filters/network/thrift_proxy/v3"
 )
 
 // ensure the imports are used
@@ -36,7 +36,7 @@ var (
 	_ = anypb.Any{}
 	_ = sort.Sort
 
-	_ = v3.TransportType(0)
+	_ = thrift_proxyv3.TransportType(0)
 )
 
 // Validate checks the field values on Thrift with the rules defined in the
@@ -71,7 +71,7 @@ func (m *Thrift) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
-	if _, ok := v3.TransportType_name[int32(m.GetTransport())]; !ok {
+	if _, ok := thrift_proxyv3.TransportType_name[int32(m.GetTransport())]; !ok {
 		err := ThriftValidationError{
 			field:  "Transport",
 			reason: "value must be one of the defined enum values",
@@ -82,7 +82,7 @@ func (m *Thrift) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
-	if _, ok := v3.ProtocolType_name[int32(m.GetProtocol())]; !ok {
+	if _, ok := thrift_proxyv3.ProtocolType_name[int32(m.GetProtocol())]; !ok {
 		err := ThriftValidationError{
 			field:  "Protocol",
 			reason: "value must be one of the defined enum values",

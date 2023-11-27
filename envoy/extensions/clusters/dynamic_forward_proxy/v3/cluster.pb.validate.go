@@ -18,7 +18,7 @@ import (
 
 	"google.golang.org/protobuf/types/known/anypb"
 
-	v3 "github.com/envoyproxy/go-control-plane/envoy/config/cluster/v3"
+	clusterv3 "github.com/envoyproxy/go-control-plane/envoy/config/cluster/v3"
 )
 
 // ensure the imports are used
@@ -36,7 +36,7 @@ var (
 	_ = anypb.Any{}
 	_ = sort.Sort
 
-	_ = v3.Cluster_LbPolicy(0)
+	_ = clusterv3.Cluster_LbPolicy(0)
 )
 
 // Validate checks the field values on ClusterConfig with the rules defined in
@@ -252,7 +252,7 @@ func (m *SubClustersConfig) validate(all bool) error {
 
 	var errors []error
 
-	if _, ok := v3.Cluster_LbPolicy_name[int32(m.GetLbPolicy())]; !ok {
+	if _, ok := clusterv3.Cluster_LbPolicy_name[int32(m.GetLbPolicy())]; !ok {
 		err := SubClustersConfigValidationError{
 			field:  "LbPolicy",
 			reason: "value must be one of the defined enum values",
