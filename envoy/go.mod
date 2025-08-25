@@ -1,8 +1,6 @@
 module github.com/envoyproxy/go-control-plane/envoy
 
-go 1.22.0
-
-toolchain go1.22.5
+go 1.23
 
 // Used to resolve import issues related to go-control-plane package split (https://github.com/envoyproxy/go-control-plane/issues/1074)
 replace github.com/envoyproxy/go-control-plane@v0.13.4 => ../
@@ -17,7 +15,7 @@ require (
 	google.golang.org/genproto/googleapis/api v0.0.0-20250102185135-69823020774d
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250102185135-69823020774d
 	google.golang.org/grpc v1.70.0
-	google.golang.org/protobuf v1.36.5
+	google.golang.org/protobuf v1.36.8
 )
 
 require (
