@@ -1,15 +1,13 @@
 module github.com/envoyproxy/go-control-plane/ratelimit
 
-go 1.22.0
-
-toolchain go1.22.5
+go 1.23
 
 replace github.com/envoyproxy/go-control-plane/envoy => ../envoy
 
 require (
 	github.com/envoyproxy/go-control-plane/envoy v1.32.4
 	google.golang.org/grpc v1.70.0
-	google.golang.org/protobuf v1.36.5
+	google.golang.org/protobuf v1.36.10
 )
 
 require (
